@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "packageManager": "yarn@3.3.0",
+  "scripts": {
+    "migrate": "prisma migrate dev",
+    "migrate:gen": "prisma migrate dev --create-only"
+  },
+  "devDependencies": {
+    "prisma": "^4.6.1"
+  }
+}
