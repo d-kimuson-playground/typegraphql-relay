@@ -1,0 +1,13 @@
+{
+  "extends": "@tsconfig/node18-strictest/tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"],
+      "@typegraphql/*": ["prisma/generated/type-graphql/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

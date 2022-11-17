@@ -3,6 +3,15 @@ datasource db {
   url      = "file:./dev.db"
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output   = "../prisma/generated/type-graphql"
+}
+
 model Task {
   id          Int      @id @default(autoincrement())
   title       String
