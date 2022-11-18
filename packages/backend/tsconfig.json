@@ -1,13 +1,19 @@
 {
   "extends": "@tsconfig/node18-strictest/tsconfig.json",
   "compilerOptions": {
-    "module": "esnext",
+    "module": "commonjs",
+    "lib": ["es2018", "esnext.asynciterable"],
     "baseUrl": "./",
     "paths": {
       "~/*": ["src/*"],
-      "@typegraphql/*": ["prisma/generated/type-graphql/*"]
-    }
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./dist"
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "swc": true,
+  }
 }

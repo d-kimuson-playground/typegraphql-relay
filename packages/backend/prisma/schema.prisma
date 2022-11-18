@@ -8,8 +8,8 @@ generator client {
 }
 
 generator typegraphql {
-  provider = "typegraphql-prisma"
-  output   = "../prisma/generated/type-graphql"
+  // node_modules 以下に吐き出さないと型チェックが面倒
+  provider           = "typegraphql-prisma"
 }
 
 model Task {
