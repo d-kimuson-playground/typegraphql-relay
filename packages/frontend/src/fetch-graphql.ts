@@ -1,4 +1,4 @@
-import type { GraphQLResponse } from "relay-runtime";
+import type { GraphQLResponse } from "relay-runtime"
 
 export async function fetchGraphQL(
   text: string,
@@ -13,7 +13,7 @@ export async function fetchGraphQL(
       query: text,
       variables,
     }),
-  });
+  })
 
-  return await response.json();
+  return await response.json()
 }

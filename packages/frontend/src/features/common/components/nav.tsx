@@ -1,4 +1,4 @@
-import { Link } from "./link";
+import { Link } from "./link"
 
 export const Nav: React.FC = () => {
   return (
@@ -18,5 +18,5 @@ export const Nav: React.FC = () => {
         </Link>
       </li>
     </ul>
-  );
-};
+  )
+}

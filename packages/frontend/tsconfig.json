@@ -4,11 +4,11 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["esnext", "dom", "DOM.Iterable"],
-    "jsx" :"react-jsx",
+    "jsx": "react-jsx",
     "types": ["node", "vite/client"],
     "baseUrl": "./",
     "paths": {
-      "~/*": ["src/*"],
+      "~/*": ["src/*"]
     },
     "noEmit": true,
     "outDir": "./dist",
@@ -17,6 +17,6 @@
   "include": ["src"],
   "exclude": ["node_modules"],
   "ts-node": {
-    "swc": true,
+    "swc": true
   }
 }

@@ -1,7 +1,7 @@
 import { resolve } from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
-import relay from 'vite-plugin-relay';
+import relay from "vite-plugin-relay"
 
 export default defineConfig({
   plugins: [relay, react()],
@@ -9,11 +9,11 @@ export default defineConfig({
     host: "0.0.0.0",
   },
   define: {
-    global: 'window',
+    global: "window",
   },
   resolve: {
     alias: {
       "~": resolve(".", "src"),
-    }
-  }
-});
+    },
+  },
+})

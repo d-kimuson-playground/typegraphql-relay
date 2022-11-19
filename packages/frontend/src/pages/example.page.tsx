@@ -1,8 +1,8 @@
-import { graphql, usePreloadedQuery } from "react-relay";
-import { loadQuery, PreloadedQuery } from "react-relay/hooks";
+import { graphql, usePreloadedQuery } from "react-relay"
+import { loadQuery, PreloadedQuery } from "react-relay/hooks"
 import type { example_ExamplePageQuery } from "./__generated__/example_ExamplePageQuery.graphql"
-import { relayEnvironment } from "../relay-environment";
-import { Nav } from "~/features/common/components/nav";
+import { relayEnvironment } from "../relay-environment"
+import { Nav } from "~/features/common/components/nav"
 
 export const examplePageQuery = graphql`
   query example_ExamplePageQuery {
@@ -11,19 +11,23 @@ export const examplePageQuery = graphql`
       title
     }
   }
-`;
+`
 
-export const examplePageQueryRef = loadQuery<example_ExamplePageQuery>(relayEnvironment, examplePageQuery, {})
+export const examplePageQueryRef = loadQuery<example_ExamplePageQuery>(
+  relayEnvironment,
+  examplePageQuery,
+  {}
+)
 
 export type ExamplePageProps = {
-  queryRef: PreloadedQuery<example_ExamplePageQuery>;
-};
+  queryRef: PreloadedQuery<example_ExamplePageQuery>
+}
 
 export const ExamplePage: React.FC<ExamplePageProps> = ({ queryRef }) => {
   const data = usePreloadedQuery<example_ExamplePageQuery>(
     examplePageQuery,
     queryRef
-  );
+  )
 
   return (
     <div className="Example">
@@ -37,5 +41,5 @@ export const ExamplePage: React.FC<ExamplePageProps> = ({ queryRef }) => {
         </ul>
       </header>
     </div>
-  );
-};
+  )
+}

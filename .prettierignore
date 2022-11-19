@@ -1,0 +1,9 @@
+.history
+.yarn
+packages/backend/dist
+packages/backend/bundle
+packages/frontend/dist
+
+# required 2.8 (satisfies operator)
+# https://github.com/prettier/prettier/issues/13516
+packages/frontend/src/router.tsx
