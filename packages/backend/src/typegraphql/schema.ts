@@ -14,5 +14,6 @@ export const schema = async (): Promise<GraphQLSchema> => {
       TaskMutationResolvers
     ]),
     validate: true,
+    emitSchemaFile: true,
   });
 };

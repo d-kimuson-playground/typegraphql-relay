@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom", "DOM.Iterable"],
+    "jsx" :"react-jsx",
+    "types": ["node", "vite/client"],
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"],
+    },
+    "noEmit": true,
+    "outDir": "./dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "swc": true,
+  }
+}
