@@ -6,6 +6,7 @@
   "scripts": {
     "setup:husky": "husky install",
     "setup:git": "git config --local --add merge.ff false && git config --local --add pull.ff only",
+    "setup:packages": "yarn --cwd ./packages/backend && yarn --cwd ./packages/frontend",
     "setup": "run-s 'setup:*'"
   },
   "config": {
