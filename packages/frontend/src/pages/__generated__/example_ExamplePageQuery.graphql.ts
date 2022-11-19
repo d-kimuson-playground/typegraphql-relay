@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<763431dc55af272b939cee12577f83b1>>
+ * @generated SignedSource<<716a52fde56f74118d95cd2a898da95e>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,16 +9,16 @@
 // @ts-nocheck
 
 import { ConcreteRequest, Query } from 'relay-runtime';
-export type example_ExampleQuery$variables = {};
-export type example_ExampleQuery$data = {
+export type example_ExamplePageQuery$variables = {};
+export type example_ExamplePageQuery$data = {
   readonly tasks: ReadonlyArray<{
     readonly id: string;
     readonly title: string;
   }>;
 };
-export type example_ExampleQuery = {
-  response: example_ExampleQuery$data;
-  variables: example_ExampleQuery$variables;
+export type example_ExamplePageQuery = {
+  response: example_ExamplePageQuery$data;
+  variables: example_ExamplePageQuery$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -54,7 +54,7 @@ return {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "example_ExampleQuery",
+    "name": "example_ExamplePageQuery",
     "selections": (v0/*: any*/),
     "type": "Query",
     "abstractKey": null
@@ -63,20 +63,20 @@ return {
   "operation": {
     "argumentDefinitions": [],
     "kind": "Operation",
-    "name": "example_ExampleQuery",
+    "name": "example_ExamplePageQuery",
     "selections": (v0/*: any*/)
   },
   "params": {
-    "cacheID": "65e929aa1aa7ecadb212ac2618152f92",
+    "cacheID": "aa2f00612b89d4042a4241b49d910d2b",
     "id": null,
     "metadata": {},
-    "name": "example_ExampleQuery",
+    "name": "example_ExamplePageQuery",
     "operationKind": "query",
-    "text": "query example_ExampleQuery {\n  tasks {\n    id\n    title\n  }\n}\n"
+    "text": "query example_ExamplePageQuery {\n  tasks {\n    id\n    title\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "010690f3c878315dfcbc2338d35bebb0";
+(node as any).hash = "fca1b62776dd1b630d2151ad6297a94d";
 
 export default node;

@@ -8,5 +8,6 @@
     "NOLICENSED",
     "outfile",
     "typegraphql"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

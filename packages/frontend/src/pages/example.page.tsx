@@ -1,10 +1,11 @@
 import { graphql, usePreloadedQuery } from "react-relay";
 import { loadQuery, PreloadedQuery } from "react-relay/hooks";
-import type { example_ExampleQuery } from "./__generated__/example_ExampleQuery.graphql"
+import type { example_ExamplePageQuery } from "./__generated__/example_ExamplePageQuery.graphql"
 import { relayEnvironment } from "../relay-environment";
+import { Nav } from "~/features/common/components/nav";
 
 export const examplePageQuery = graphql`
-  query example_ExampleQuery {
+  query example_ExamplePageQuery {
     tasks {
       id
       title
@@ -12,14 +13,14 @@ export const examplePageQuery = graphql`
   }
 `;
 
-export const examplePageQueryRef = loadQuery<example_ExampleQuery>(relayEnvironment, examplePageQuery, {})
+export const examplePageQueryRef = loadQuery<example_ExamplePageQuery>(relayEnvironment, examplePageQuery, {})
 
-export type ExampleProps = {
-  queryRef: PreloadedQuery<example_ExampleQuery>;
+export type ExamplePageProps = {
+  queryRef: PreloadedQuery<example_ExamplePageQuery>;
 };
 
-export const Example: React.FC<ExampleProps> = ({ queryRef }) => {
-  const data = usePreloadedQuery<example_ExampleQuery>(
+export const ExamplePage: React.FC<ExamplePageProps> = ({ queryRef }) => {
+  const data = usePreloadedQuery<example_ExamplePageQuery>(
     examplePageQuery,
     queryRef
   );
@@ -28,6 +29,7 @@ export const Example: React.FC<ExampleProps> = ({ queryRef }) => {
     <div className="Example">
       <header className="Example-header">
         <h2>tasks!</h2>
+        <Nav />
         <ul>
           {data.tasks.map((task) => (
             <li key={task.id}>{task.title}</li>
