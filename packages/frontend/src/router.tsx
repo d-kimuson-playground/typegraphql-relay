@@ -38,6 +38,17 @@ const routes = [
 
 export type RouteConf = RouteConfig<typeof routes>
 export const router = createBrowserRouter(routes as unknown as RouteObject[])
+export const resolveLink = (
+  path: string,
+  params?: { [K: string]: string }
+): string => {
+  return params === undefined
+      ? path
+      : Object.entries(params).reduce(
+          (s, [key, value]) => s.replace(`:${key}`, value),
+          path
+        );
+}
 
 type RouteConfig<T extends RoutesDef, U = ToRouteUnion<T>> = AsObjectShape<U extends { path: string } ? U : { path: string }>
 type ToRouteUnion<T extends RoutesDef> = T extends ReadonlyArray<infer I> ? MergeChild<I> : never

@@ -1,6 +1,6 @@
 import type React from "react";
 import { Link as RouterLink } from "react-router-dom";
-import type { RouteConf } from "../../../router";
+import { resolveLink, RouteConf } from "../../../router";
 
 export const Link = <
   T extends keyof RouteConf,
@@ -14,13 +14,6 @@ export const Link = <
     path: string;
     params: { [K: string]: string } | undefined;
   }>;
-  const resolvedPath =
-    params === undefined
-      ? path
-      : Object.entries(params).reduce(
-          (s, [key, value]) => s.replace(`:${key}`, value),
-          path
-        );
-
+  const resolvedPath = resolveLink(path, params)
   return <RouterLink to={resolvedPath}>{children}</RouterLink>;
 };
